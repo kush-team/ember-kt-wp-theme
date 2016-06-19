@@ -1,0 +1,7 @@
+{{model.term.name}}
+
+<ul>
+	{{#each model.posts as |post|}}
+		<li>{{#link-to 'post.show' post.id}} {{{post.title}}} {{/link-to}}</li>
+	{{/each}}
+</ul>
