@@ -1,2 +1,21 @@
-{{{model.title}}}
-{{{model.content}}}
+<div style="min-height: 100vh;">
+<div class="item" >
+    <div class="ui small image" post-id={{post.slug}}>
+	{{#if post.featured_image }}
+		<img {{bind-attr src=post.featured_image.source}} >
+	{{else}}
+		<img src="http://semantic-ui.com/images/wireframe/image.png" >
+	{{/if}}
+    </div>
+    <div class="content" >
+      <div class="header">{{{post.title}}}</div>
+      <div class="meta">
+        <span class="price">$1200</span>
+        <span class="stay">1 Month</span>
+      </div>
+      <div class="description">
+        <p>{{{post.content}}}</p>
+      </div>
+    </div>
+</div>	
+</div>

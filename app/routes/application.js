@@ -5,4 +5,11 @@ export default Ember.Route.extend(GoBackMixin, {
 	model: function () {
 		return this.store.find('menu', 2);
 	},
+
+	actions: {
+   		 willTransition: function(transition) { 
+   		 	this.controller.set('isShowMenu', false);
+   		 	this.controller.set('isShowSearch', false);
+   		 }
+	}
 });

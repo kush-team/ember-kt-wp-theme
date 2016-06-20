@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.Component.extend({
 	posts: [],
 	query: '',
 	searching: false,
@@ -8,7 +8,8 @@ export default Ember.Controller.extend({
 	interval: null,
 	show: false,
 	isShowMenu: false,
-
+	classNameBindings: [':smart-search', 'isHome:-home'],
+	isHome: false,
 
 
 	actions: {
@@ -51,5 +52,5 @@ export default Ember.Controller.extend({
 			}, 500);
 			this.set('interval', interval);
 		}
-	}.observes('query'),	
+	}.observes('query'),
 });

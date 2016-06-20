@@ -1,0 +1,37 @@
+<!--<section class="overlay">-->
+<div {{bind-attr class=":search  show:show"}}>
+{{#if show}}
+	<fieldset>
+		
+	{{fa-icon 'search'}}	
+	{{input type="text" value=query placeholder="Ingrese su búsqueda"}}
+	
+	<a {{action 'close'}} class="close-search">{{fa-icon 'times'}}</a>
+	</fieldset>
+	
+	{{#if searching}}
+		<div class="loading">
+			{{loading-spin color='#cccccc' size=50}}
+		</div>
+	{{/if}}
+	
+	{{#if searched}}
+		{{#if posts}}
+			<ul>	
+				{{#each posts as |post|}}
+					{{post-brief post=post showCategory=true action='close' query=query highlighting=true}}
+				{{/each}}
+			</ul>
+		{{else}}
+			<div class="empty-data">
+				{{fa-icon 'search'}}
+				<i>No se han encontrado resultados.</i>
+			</div>
+		{{/if}}
+	{{/if}}
+
+{{else}}
+	<a {{action 'open'}} class="open-search">{{fa-icon 'search'}}</a>
+{{/if}}
+
+</div>

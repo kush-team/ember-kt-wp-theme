@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'ul',
-  classNameBindings: [':menu-wp', 'isHome:-home'],
+  tagName: 'div',
+  classNameBindings: [':ui', ':fixed', ':menu', 'isHome:-home'],
 
   isShowMenu: false,
   show: false,

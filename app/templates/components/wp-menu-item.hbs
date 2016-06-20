@@ -1,13 +1,22 @@
 {{#if isCustom}}
 	<a {{bind-attr href=item.url }} target="_blank">{{item.title}}</a>
 {{else}}
-	{{#link-to link item.object_id}} {{item.title}} {{/link-to}}
+	
+
+	{{#if item.subItems}}
+		{{#ui-dropdown}}
+		<div class="default text"> {{item.title}} </div>
+		<i class="dropdown icon"></i>
+		<div class="menu">
+		{{#each item.subItems as |menuItem|}}
+		{{wp-menu-item item=menuItem}}
+		{{/each}}
+		</div>
+		{{/ui-dropdown}}
+	{{else}}
+		{{#link-to link item.object_id }} {{item.title}} {{/link-to}}
+
+	{{/if}}
 {{/if}}
 
-{{#if item.subItems}}
-	<ul>
-	{{#each item.subItems as |menuItem|}}
-		{{wp-menu-item item=menuItem}}
-	{{/each}}
-	</ul>
-{{/if}}
+

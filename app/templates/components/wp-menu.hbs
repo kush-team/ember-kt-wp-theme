@@ -1,5 +1,13 @@
+<div class="ui container">
+<a href="#" class="header item">
+<img class="logo" src="http://semantic-ui.com/examples/assets/images/logo.png">
+Ember WP Theme
+</a>
+
 {{#each items as |menuItem|}}
-	{{#unless menuItem.parent}}
-		{{wp-menu-item item=menuItem}}
-	{{/unless}}
+{{#unless menuItem.parent}}
+{{wp-menu-item item=menuItem}}
+{{/unless}}
 {{/each}}
+
+</div>

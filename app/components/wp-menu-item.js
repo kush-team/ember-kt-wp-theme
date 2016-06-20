@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'li',
+  tagName: 'div',
+  classNameBindings: [':item'],
   isOpen: false,
 
   isCustom: Ember.computed('item' , function() {

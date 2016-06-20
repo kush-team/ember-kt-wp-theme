@@ -1,7 +1,26 @@
-{{model.term.name}}
+<h2>{{model.term.name}}</h2>
 
-<ul>
+<div class="ui items" style="min-height: 100vh;">
 	{{#each model.posts as |post|}}
-		<li>{{#link-to 'post.show' post.id}} {{{post.title}}} {{/link-to}}</li>
+		<div class="item" >
+		    <div class="ui small image" post-id={{post.slug}}>
+			{{#if post.featured_image }}
+				<img {{bind-attr src=post.featured_image.source}} >
+			{{else}}
+				<img src="http://semantic-ui.com/images/wireframe/image.png">
+			{{/if}}
+		    </div>
+		    <div class="content" >
+		      {{#link-to 'post.show' post.id class="header"}} {{{post.title}}} {{/link-to}}
+		      <div class="meta">
+		        <span class="price">$1200</span>
+		        <span class="stay">1 Month</span>
+		      </div>
+		      <div class="description">
+		        <p></p>
+		      </div>
+		    </div>
+			
+		</div>
 	{{/each}}
-</ul>
+</div>

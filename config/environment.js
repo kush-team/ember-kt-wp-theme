@@ -16,6 +16,35 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    pace: {
+      color: 'blue',
+      theme: 'minimal',
+      catchupTime: 50,
+      initialRate: .01,
+      minTime: 100,
+      ghostTime: 50,
+      maxProgressPerFrame: 20,
+      easeFactor: 1.25,
+      startOnPageLoad: true,
+      restartOnPushState: true,
+      restartOnRequestAfter: 500,
+      target: 'body',
+      elements: {
+        checkInterval: 100,
+        selectors: ['body', '.ember-view']
+      },
+      eventLag: {
+        minSamples: 10,
+        sampleCount: 3,
+        lagThreshold: 3
+      },
+      ajax: {
+        trackMethods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
+        trackWebSockets: true,
+        ignoreURLs: []
+      }
     }
   };
 
