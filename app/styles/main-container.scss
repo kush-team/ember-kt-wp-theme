@@ -1,0 +1,20 @@
+.main-container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 2em 0;
+
+	article {
+		float: left;
+		width: 65%;
+	}
+
+	aside {
+		float: right;
+		width: 30%;
+		padding-top: 20px;
+
+		.author {
+			margin-top: 10px;
+		}
+	}
+}

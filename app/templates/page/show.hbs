@@ -1,54 +1,47 @@
-<img {{bind-attr src=model.featured_image.source}} class="image-header">
-
-<article class="type-system-sans type-{{model.format}}">
-
-<a class="ui label">
-  ID: {{model.id}}
-</a>
-<a class="ui label">
-  {{fa-icon "paper-plane" }} {{model.status}}
-</a>
-<a class="ui label">
-  {{fa-icon 'file' class="icon"}} {{model.type}}
-</a>
-<a class="ui label">
-  {{fa-icon 'calendar' class="icon"}} {{month-and-day model.date}}
-</a>
-
-  <a class="ui label">
-    Link
-    <div class="detail">{{model.link}}</div>
-  </a>
-
-<div class="ui divider"></div>
-
-
-
-
-<h2 class="ui header divided">{{{model.title}}}</h2>
-
-
-{{{model.content}}}
-
-<div class="ui segment">
-<h4 class="ui header">Author</h4>
-<div class="ui card author">
- <a class="image">
-	{{#if model.author.avatar }}
-		<img {{bind-attr src=model.author.avatar}} >
-	{{else}}
-		<img src="http://semantic-ui.com/images/wireframe/image.png">
-	{{/if}}
-    </a>
-  <div class="content">
-    <a class="header" href="#">{{model.author.nickname}}</a>
+<div class="type-{{model.type}} type-{{model.format}}">
+  <article class="type-system-sans type-{{model.format}}">
+    <img {{bind-attr src=model.featured_image.source}} class="image-header" style="width: 100%;">
+    <h2 class="ui header divided">{{{model.title}}}</h2>
+    {{{model.content}}}
+  </article>
+  
+  <aside>
     <div class="meta">
-      <a>Registered {{time-ago-in-words model.author.registered}}</a>
-      
+      <a class="ui label">
+      ID: {{model.id}}
+      </a>
+      <a class="ui label">
+      {{fa-icon "paper-plane" }} {{model.status}}
+      </a>
+      <a class="ui label">
+      {{fa-icon 'file' class="icon"}} {{model.type}}
+      </a>
+      <a class="ui label">
+      {{fa-icon 'calendar' class="icon"}} {{month-and-day model.date}}
+      </a>
+      <a class="ui label">
+        Link
+        <div class="detail">{{model.link}}</div>
+      </a>
     </div>
-  </div>
-</div>
 
+    <div class="author">
+      <h4 class="ui header">Author</h4>
+      <div class="ui card author">
+        <a class="image">
+          {{#if model.author.avatar }}
+            <img {{bind-attr src=model.author.avatar}} >
+          {{else}}
+           <img src="http://semantic-ui.com/images/wireframe/image.png">
+          {{/if}}
+        </a>
+        <div class="content">
+          <a class="header" href="#">{{model.author.nickname}}</a>
+          <div class="meta">
+            <a>Registered {{time-ago-in-words model.author.registered}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
 </div>
-
-</article>

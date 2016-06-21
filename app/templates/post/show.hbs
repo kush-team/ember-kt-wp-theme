@@ -1,13 +1,19 @@
-<div style="min-height: 100vh;">
-<div class="item" >
-    <div class="ui medium image" post-id={{post.slug}}>
-	{{#if post.featured_image }}
-		<img {{bind-attr src=post.featured_image.source}} >
-	{{else}}
-		<img src="http://semantic-ui.com/images/wireframe/image.png" >
-	{{/if}}
-    </div>
-    <div class="content" >
+<div class="type-{{post.type}}">
+  
+  <div class="ui medium image" post-id={{post.slug}}>
+  
+  {{#if post.featured_image }}
+  <img {{bind-attr src=post.featured_image.source}} >
+  {{else}}
+  <img src="http://semantic-ui.com/images/wireframe/image.png" >
+  {{/if}}
+  </div>
+
+    <article class="content-{{post.type}}" >
+      <a {{action 'smartGoBack'}} class="ui button">
+      {{fa-icon 'long-arrow-left'}}
+      Volver  
+    </a>
       <div class="header">{{{post.title}}}</div>
       {{{post.excerpt}}}
       <div class="meta">
@@ -18,6 +24,6 @@
       <div class="description">
         <p>{{{post.content}}}</p>
       </div>
-    </div>
-</div>	
+    </article>
+
 </div>

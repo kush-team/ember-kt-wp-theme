@@ -1,21 +1,13 @@
-
-
-{{wp-menu isHome=isHome items=model.items show=isShowMenu iShowMenu=isShowMenu}}
-
-
-
-<div class="ui vertical stripe segment" style="margin-top: 59px;">
-
-
-
-	<div class="ui middle aligned stackable grid container">
-		
-		{{liquid-outlet class="row"}}
+{{#if isHome}}
+	<div class="main-nav -home">
+	{{wp-menu items=model.items show=isShowMenu iShowMenu=isShowMenu}}
 
 	</div>
-</div>
+{{else}}
+	<div class="main-nav">
+	{{wp-menu items=model.items show=isShowMenu iShowMenu=isShowMenu}}
+	</div>
+{{/if}}
 
-
-
-
+{{liquid-outlet class="main-container"}}
 

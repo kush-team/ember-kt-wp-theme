@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'div',
-  classNameBindings: [':ui', ':fixed', ':menu', 'isHome:-home'],
+  classNameBindings: [':ui', ':container'],
 
   isShowMenu: false,
   show: false,
