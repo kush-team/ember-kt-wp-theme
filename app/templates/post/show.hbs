@@ -1,6 +1,6 @@
 <div style="min-height: 100vh;">
 <div class="item" >
-    <div class="ui small image" post-id={{post.slug}}>
+    <div class="ui medium image" post-id={{post.slug}}>
 	{{#if post.featured_image }}
 		<img {{bind-attr src=post.featured_image.source}} >
 	{{else}}
@@ -9,9 +9,11 @@
     </div>
     <div class="content" >
       <div class="header">{{{post.title}}}</div>
+      {{{post.excerpt}}}
       <div class="meta">
-        <span class="price">$1200</span>
-        <span class="stay">1 Month</span>
+            <span class="price">{{post.status}}</span>
+            <span class="stay">{{post.type}}</span>
+            <span class="stay">{{time-ago-in-words post.date_gmt}}</span>
       </div>
       <div class="description">
         <p>{{{post.content}}}</p>

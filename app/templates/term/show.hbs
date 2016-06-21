@@ -13,14 +13,17 @@
 		    <div class="content" >
 		      {{#link-to 'post.show' post.id class="header"}} {{{post.title}}} {{/link-to}}
 		      <div class="meta">
-		        <span class="price">$1200</span>
-		        <span class="stay">1 Month</span>
+		        <span class="price">{{post.status}}</span>
+		        <span class="stay">{{post.type}}</span>
+		        <span class="stay">{{time-ago-in-words post.date_gmt}}</span>
 		      </div>
 		      <div class="description">
-		        <p></p>
+		        <p>{{{post.excerpt}}}</p>
 		      </div>
 		    </div>
 			
 		</div>
 	{{/each}}
 </div>
+
+
