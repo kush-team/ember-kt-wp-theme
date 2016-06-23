@@ -1,5 +1,5 @@
 import Ember from 'ember';
-
+z
 export default Ember.Route.extend({
 	model: function (params) {
       return Ember.RSVP.hash({

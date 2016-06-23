@@ -18,6 +18,8 @@
     "pace": "vectart/pace#master",
     "perfect-scrollbar": "~0.6.7",
     "qunit": "~1.17.1",
+    "neat": "1.7.2",
+    "bourbon": "4.2.6",
     "semantic-ui": "^2.1.8"
   },
   "devDependencies": {

@@ -1,13 +1,15 @@
 <div class="ui large secondary menu">
-<a href="#" class="header item">
+{{t-menu a="x-cross" action="toggle" is-open=show class=":right smart-menu"}}
+<a href="#" class="header item" >
 	<img class="logo" src="http://kush-team.com.ar/wp-content/uploads/2016/06/iso-kush-team.png">
 	Ember WP Theme
 </a>
-{{#each items as |menuItem|}}
-	{{#unless menuItem.parent}}
-		{{wp-menu-item item=menuItem}}
-	{{/unless}}
-{{/each}}
-
+<div {{bind-attr class=":right :menu :nav-list show:show"}}>
+	{{#each items as |menuItem|}}
+		{{#unless menuItem.parent}}
+			{{wp-menu-item item=menuItem}}
+		{{/unless}}
+	{{/each}}
+</div>
 </div>
 

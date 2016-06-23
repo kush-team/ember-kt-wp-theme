@@ -20,6 +20,10 @@
 		      </div>
 		      <div class="description">
 		        <p>{{{post.excerpt}}}</p>
+		        {{#if post.sticky}}
+		         <div class="ui horizontal label green">Sticky</div>
+		        {{/if}}
+		        
 		      </div>
 		    </div>
 			

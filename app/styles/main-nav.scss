@@ -1,9 +1,91 @@
 .main-nav {
-	border-bottom: 2px solid #7e2553;
+	border-bottom: 5px solid #7e2553;
+	-webkit-transition: all .4s cubic-bezier(0.7,0,.3,1);
+	-moz-transition: all .4s cubic-bezier(0.7,0,.3,1);
+	transition: all .4s cubic-bezier(0.7,0,.3,1);
+	position: fixed;
+	background: #fff;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	&:hover {
+		top: 0;
+	}
 
 	a {
 		color: #7e2553;
 		font-weight: 600;
+
+		&:hover {
+			color: #333;
+		}
+	}
+
+	.active {
+		color: #333;
+
+		
+		&:before {
+			content: "";
+			position: absolute;
+		    bottom: -12px;
+	        left: calc(50% - 10px);
+			@include triangle(20px, #7e2553, up);
+
+			@include media($tablet) {
+				opacity: 0;
+			}
+		}
+	}
+
+	.smart-menu {
+		opacity: 0;
+		display: none;
+		margin: 11px;
+
+		@include media($tablet) {
+			opacity: 1;
+			display: block;
+		}
+	}
+
+	.nav-list {
+		-webkit-transition: all .4s cubic-bezier(0.7,0,.3,1);
+		-moz-transition: all .4s cubic-bezier(0.7,0,.3,1);
+		transition: all .4s cubic-bezier(0.7,0,.3,1);
+
+		
+
+		@include media($tablet) {
+			opacity: 0;
+			position: fixed;
+			top: 70px;
+			left: 0;
+			bottom: 0;
+			background: #fff;
+			visibility: hidden;
+			flex-direction: column;
+			right: 0;
+			font-size: 25px;
+			padding-top: 25px;
+		}
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+
+	
+
+	.item a[href*="github.com"]:before {
+	    font-family: 'Icons';
+		content: "\f09b";
+		margin-right: 5px;
+		font-size: 18px;
 	}
 
 }

@@ -7,12 +7,16 @@ article.type-system-sans {
   $light-gray: #ddd !default;
   $medium-screen: 40em !default;
   $base-font-color: $dark-gray !default;
-  $sans-serif: "PT Sans", sans-serif;
-  $sans-serif-2: "Titillium Web", sans-serif;
+  $sans-serif-2: "PT Sans", sans-serif;
+  $sans-serif: "Titillium Web", sans-serif;
 
   
   font-family: $sans-serif;
   text-align: left;
+
+  nav {
+    margin-bottom: 10px; 
+  }
 
   h1,
   h2,
@@ -32,6 +36,7 @@ article.type-system-sans {
   p {
     color: $base-font-color;
     line-height: $base-line-height;
+    font-size: 1.2em;
   }
 
   a {
@@ -50,6 +55,14 @@ article.type-system-sans {
     padding: 0.1em 0;
     text-align: left;
     text-transform: uppercase;
+  }
+
+  pre {
+        padding: 16px;
+    overflow: auto;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px;
   }
 
   h1 {
@@ -80,7 +93,7 @@ article.type-system-sans {
     border-radius: $base-border-radius * 1.5;
     border: 1px solid #e0e0e0;
     font-family: monaco;
-    font-size: 0.65em;
+    font-size: 1em;
     font-style: normal;
     padding: 0.1em 0.4em;
     white-space: nowrap;
@@ -104,13 +117,14 @@ article.type-system-sans {
 
   p {
     font-family: $sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1;
     margin-bottom: 1.5em;
 
+
     span {
       font-family: $sans-serif;
-      font-size: 0.8em;
+      //font-size: 0.8em;
       font-weight: 600;
       text-transform: uppercase;
     }

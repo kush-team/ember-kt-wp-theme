@@ -6,42 +6,40 @@
   </article>
   
   <aside>
-    <div class="meta">
-      <a class="ui label">
-      ID: {{model.id}}
+    
+    <div class="ui divided selection list meta">
+      <h3>Page Atributes</h3>
+      <a class="item">
+        <div class="ui green horizontal label">ID</div>
+        {{model.id}}
       </a>
-      <a class="ui label">
-      {{fa-icon "paper-plane" }} {{model.status}}
+      <a class="item">
+        <div class="ui green horizontal label">Status</div>
+         {{model.status}}
       </a>
-      <a class="ui label">
-      {{fa-icon 'file' class="icon"}} {{model.type}}
+      <a class="item">
+        <div class="ui green horizontal label">Type</div>
+        {{model.type}}
       </a>
-      <a class="ui label">
-      {{fa-icon 'calendar' class="icon"}} {{month-and-day model.date}}
+      <a class="item">
+        <div class="ui horizontal label">Date</div>
+        {{month-and-day model.date}}
       </a>
-      <a class="ui label">
-        Link
-        <div class="detail">{{model.link}}</div>
+      <a class="item">
+        <div class="ui horizontal label">Modified</div>
+        {{time-ago-in-words model.modified}}
       </a>
-    </div>
-
-    <div class="author">
-      <h4 class="ui header">Author</h4>
-      <div class="ui card author">
-        <a class="image">
-          {{#if model.author.avatar }}
-            <img {{bind-attr src=model.author.avatar}} >
-          {{else}}
-           <img src="http://semantic-ui.com/images/wireframe/image.png">
-          {{/if}}
-        </a>
-        <div class="content">
-          <a class="header" href="#">{{model.author.nickname}}</a>
-          <div class="meta">
-            <a>Registered {{time-ago-in-words model.author.registered}}</a>
-          </div>
+      <a class="item">
+        <div class="ui horizontal label">Link</div>
+        {{model.link}}
+      </a>
+      <a class="item">
+        <div class="ui medium image">
+          <img {{bind-attr src=model.featured_image.source}} >
         </div>
-      </div>
+        <div class="ui horizontal label">Featured image</div>
+      </a>
     </div>
   </aside>
 </div>
+
