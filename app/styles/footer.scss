@@ -26,6 +26,13 @@
      display: flex;
      max-width: 1008px;
      margin: 0 auto;
+
+    @include media($mobile) {
+      flex-direction: column;
+    }
+
+
+         
   }
 
   .footer-links {
@@ -39,6 +46,10 @@
   .footer-support {
     text-align: center;
     flex: 1 1 300px;
+
+    @include media($mobile) {
+     flex: 1 1 180px;
+    }
 
     p {
       margin-bottom: 1em;

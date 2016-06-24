@@ -5,6 +5,11 @@
 	{{#each model.posts as |post|}}
 		<div {{bind-attr class=":item post.sticky:sticky"}} >
 		    <div class="ui small image" post-id={{post.slug}}>
+			{{#if post.sticky}}
+			<a class="ui teal corner green label" title="Sticky Post">
+				<i class="heart icon"></i>
+			</a>
+			{{/if}}
 			{{#if post.featured_image }}
 				<img {{bind-attr src=post.featured_image.source}} >
 			{{else}}
@@ -20,13 +25,8 @@
 		      </div>
 		      <div class="description">
 		        <p>{{{post.excerpt}}}</p>
-		        {{#if post.sticky}}
-		         <div class="ui horizontal label green">Sticky</div>
-		        {{/if}}
-		        
 		      </div>
 		    </div>
-			
 		</div>
 	{{/each}}
 </div>
