@@ -13,6 +13,10 @@ $mobile-term: new-breakpoint(max-width 500px 4);
 			margin-top: 1em !important;
 			padding-right: 25px;
 
+			a.header {
+			    color: #7e2553 !important;
+			}
+
 			@include media($mobile-term) {
 				flex: 1 1 100%;
 
