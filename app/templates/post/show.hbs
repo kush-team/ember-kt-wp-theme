@@ -15,14 +15,20 @@
 
 
   <aside>
-     <div class="ui medium image" post-id={{post.slug}}>
+     
   
     {{#if post.featured_image }}
-    <img {{bind-attr src=post.featured_image.source}} >
+      <div class="ui medium image" post-id={{post.slug}}>
+       <div class="ui medium image">
+      <img {{bind-attr src=post.featured_image.source}} >
+      </div>
+       </div>
     {{else}}
-    <img src="http://semantic-ui.com/images/wireframe/image.png" >
+    <div class="item">
+      <div class="ui horizontal red label">No featured image</div>
+    </div>
     {{/if}}
-  </div>
+ 
 
   <div class="ui divided selection list meta">
       <h3>Post Atributes</h3>
@@ -50,16 +56,6 @@
       <a class="item">
         <div class="ui horizontal label">Link</div>
         {{post.link}}
-      </a>
-      <a href="" class="item">
-        {{#if post.featured_image }}
-           <div class="ui medium image">
-          <img {{bind-attr src=post.featured_image.source}} >
-          </div>
-          <div class="ui horizontal green label">Featured image</div>
-        {{else}}
-          <div class="ui horizontal red label">No featured image</div>
-        {{/if}}
       </a>
       <a class="item">
         <div {{bind-attr class=":ui :horizontal :label post.sticky:green"}}>Sticky</div>

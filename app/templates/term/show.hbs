@@ -1,9 +1,9 @@
 <div class="type-term">
 <h2>{{model.term.name}}</h2>
 
-<div class="ui items" style="min-height: 100vh;">
+<div class="ui items term-list">
 	{{#each model.posts as |post|}}
-		<div class="item" >
+		<div {{bind-attr class=":item post.sticky:sticky"}} >
 		    <div class="ui small image" post-id={{post.slug}}>
 			{{#if post.featured_image }}
 				<img {{bind-attr src=post.featured_image.source}} >

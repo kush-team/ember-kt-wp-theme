@@ -1,0 +1,16 @@
+.type-term {
+	.term-list {
+		display: flex;
+		flex-wrap: wrap;
+
+		.item {
+			order: 2;
+			flex: 1 1 50%;
+			margin-top: 1em !important;
+		}
+
+		.sticky {
+			order: 1 !important;
+		}
+	}
+}
