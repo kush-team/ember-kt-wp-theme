@@ -1,12 +1,14 @@
-{{#if isHome}}
-	<div class="main-nav -home">
-	{{wp-menu items=model.items show=isShowMenu iShowMenu=isShowMenu}}
+{{#if model}}
+	{{#if isHome}}
+		<div class="main-nav -home">
+		{{wp-menu items=model.items show=isShowMenu iShowMenu=isShowMenu}}
 
-	</div>
-{{else}}
-	<div class="main-nav">
-	{{wp-menu items=model.items show=isShowMenu iShowMenu=isShowMenu}}
-	</div>
+		</div>
+	{{else}}
+		<div class="main-nav">
+		{{wp-menu items=model.items show=isShowMenu iShowMenu=isShowMenu}}
+		</div>
+	{{/if}}
 {{/if}}
 
 {{liquid-outlet class="main-container"}}

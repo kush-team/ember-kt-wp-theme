@@ -3,11 +3,9 @@ z
 export default Ember.Route.extend({
 	model: function (params) {
       return Ember.RSVP.hash({
-          term: this.store.find('term', params.term_id),
-          post: this.get('store').find('post', {filter: {cat: params.term_id, tag: "subterm"}}).then(function(results){
-				  return results.get('firstObject');
-				}),
-          posts: this.get('store').find('post', {filter: {cat: params.term_id}})
+          term: this.store.find('term', {filter: {slug: params.term_slug}}).then(function (terms) { return terms.content.objectAt(0) }),
+          posts: this.get('store').find('post', {filter: {category_name: params.term_slug, tag: "subterm"}})
+	      posts: this.get('store').find('post', {filter: {category_name: params.term_slug}})
       });		
 	}
 });

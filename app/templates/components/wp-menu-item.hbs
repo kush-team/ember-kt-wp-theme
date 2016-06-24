@@ -1,8 +1,6 @@
 {{#if isCustom}}
 	<a {{bind-attr href=item.url }} target="_blank">{{item.title}}</a>
 {{else}}
-	
-
 	{{#if item.subItems}}
 		{{#ui-dropdown}}
 		<div class="default text"> {{item.title}} </div>
@@ -14,8 +12,7 @@
 		</div>
 		{{/ui-dropdown}}
 	{{else}}
-		{{#link-to link item.object_id }} {{item.title}} {{/link-to}}
-
+		{{#link-to link slug }} {{item.title}} {{/link-to}}
 	{{/if}}
 {{/if}}
 

@@ -1,8 +1,8 @@
-<div class="type-{{model.type}} type-{{model.format}}">
+<div class="type-{{model.page.type}} type-{{model.format}}">
   <article class="type-system-sans type-{{model.format}}">
-    <img {{bind-attr src=model.featured_image.source}} class="image-header" style="width: 100%;">
-    <h2 class="ui header divided">{{{model.title}}}</h2>
-    {{{model.content}}}
+    <img {{bind-attr src=model.page.featured_image.source}} class="image-header" style="width: 100%;">
+    <h2 class="ui header divided">{{{model.page.title}}}</h2>
+    {{{model.page.content}}}
   </article>
   
   <aside>
@@ -11,31 +11,31 @@
       <h3>Page Atributes</h3>
       <a class="item">
         <div class="ui green horizontal label">ID</div>
-        {{model.id}}
+        {{model.page.id}}
       </a>
       <a class="item">
         <div class="ui green horizontal label">Status</div>
-         {{model.status}}
+         {{model.page.status}}
       </a>
       <a class="item">
         <div class="ui green horizontal label">Type</div>
-        {{model.type}}
+        {{model.page.type}}
       </a>
       <a class="item">
         <div class="ui horizontal label">Date</div>
-        {{month-and-day model.date}}
+        {{month-and-day model.page.date}}
       </a>
       <a class="item">
         <div class="ui horizontal label">Modified</div>
-        {{time-ago-in-words model.modified}}
+        {{time-ago-in-words model.page.modified}}
       </a>
       <a class="item">
         <div class="ui horizontal label">Link</div>
-        {{model.link}}
+        {{model.page.link}}
       </a>
       <a class="item">
         <div class="ui medium image">
-          <img {{bind-attr src=model.featured_image.source}} >
+          <img {{bind-attr src=model.page.featured_image.source}} >
         </div>
         <div class="ui horizontal label">Featured image</div>
       </a>
